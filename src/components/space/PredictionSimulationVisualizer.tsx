@@ -543,7 +543,7 @@ export const PredictionSimulationVisualizer: React.FC<PredictionSimulationVisual
               </text>
             </g>
 
-            {/* Right Card: Risk Severity Class */}
+            {/* Right Card: Illustrative Risk Score */}
             <g transform="translate(270, -75)">
               <rect
                 x="-240"
@@ -565,7 +565,7 @@ export const PredictionSimulationVisualizer: React.FC<PredictionSimulationVisual
                 fontWeight="600"
                 letterSpacing="0.06em"
               >
-                RISK SEVERITY CLASS
+                ILLUSTRATIVE RISK SCORE
               </text>
               <text
                 x="0"
@@ -589,11 +589,11 @@ export const PredictionSimulationVisualizer: React.FC<PredictionSimulationVisual
                 fontWeight="600"
                 letterSpacing="0.08em"
               >
-                [ ACTION THRESHOLD EXCEEDED ]
+                [ SIMULATED RISK CATEGORY ]
               </text>
             </g>
 
-            {/* Bottom Risk Threshold Comparison Gauge */}
+            {/* Bottom Research Output Spectrum */}
             <g transform="translate(0, 95)">
               <text
                 x="-520"
@@ -603,18 +603,18 @@ export const PredictionSimulationVisualizer: React.FC<PredictionSimulationVisual
                 fontFamily="var(--font-mono)"
                 fontWeight="600"
               >
-                STANDARD OPERATIONAL THRESHOLD: 1.0 × 10^(-4) (0.00010)
+                SIMULATED MODEL OUTPUT SPECTRUM
               </text>
               <text
                 x="520"
                 y="5"
                 textAnchor="end"
-                fill="#f87171"
+                fill="#fbbf24"
                 fontSize="15"
                 fontFamily="var(--font-mono)"
-                fontWeight="700"
+                fontWeight="600"
               >
-                CURRENT RISK: 4.2× THRESHOLD
+                ILLUSTRATIVE PREDICTION: P_c = 0.00042
               </text>
 
               <rect
@@ -636,28 +636,7 @@ export const PredictionSimulationVisualizer: React.FC<PredictionSimulationVisual
                 rx="4"
               />
 
-              {/* Threshold Marker */}
-              <line
-                x1="-180"
-                y1="14"
-                x2="-180"
-                y2="50"
-                stroke="#fbbf24"
-                strokeWidth="2.5"
-              />
-              <text
-                x="-180"
-                y="70"
-                textAnchor="middle"
-                fill="#fbbf24"
-                fontSize="13"
-                fontFamily="var(--font-mono)"
-                fontWeight="700"
-              >
-                THRESHOLD (10^-4)
-              </text>
-
-              {/* Current Pc Marker */}
+              {/* Simulated Pc Marker */}
               <line
                 x1="230"
                 y1="14"
@@ -675,7 +654,7 @@ export const PredictionSimulationVisualizer: React.FC<PredictionSimulationVisual
                 fontFamily="var(--font-mono)"
                 fontWeight="700"
               >
-                PREDICTED P_c: 4.2 × 10^-4
+                SIMULATED VALUE: 0.00042
               </text>
             </g>
 
@@ -690,7 +669,7 @@ export const PredictionSimulationVisualizer: React.FC<PredictionSimulationVisual
                 fontFamily="var(--font-mono)"
                 letterSpacing="0.08em"
               >
-                CONFIDENCE: NOT AVAILABLE — MODEL NOT TRAINED // PROTOTYPE DECISION SUPPORT INTERFACE
+                RESEARCH PROTOTYPE // DEMONSTRATES INTENDED MODEL OUTPUT INTERFACE // [ MODEL NOT YET TRAINED ]
               </text>
             </g>
           </g>

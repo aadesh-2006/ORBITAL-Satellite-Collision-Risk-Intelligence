@@ -919,7 +919,7 @@ export const Screen7SimulatedDemo: React.FC = () => {
           textAlign: 'center',
         }}
       >
-        Operational Decision Support Demonstration
+        Simulated Risk Intelligence Demonstration
       </h2>
 
       {/* Workstation Simulation Area */}
@@ -971,7 +971,7 @@ export const Screen7SimulatedDemo: React.FC = () => {
             letterSpacing: '0.08em',
           }}
         >
-          DECISION SUPPORT PROTOTYPE // PRESERVES OPERATOR AUTHORITY
+          RESEARCH PROTOTYPE // ILLUSTRATIVE PREDICTION INTERFACE
         </div>
       </div>
     </div>

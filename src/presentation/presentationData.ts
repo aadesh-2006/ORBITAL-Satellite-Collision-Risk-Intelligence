@@ -53,7 +53,7 @@ export const PRESENTATION_SCREENS: PresentationScreenMeta[] = [
     id: 7,
     code: '07',
     title: 'EXPECTED OUTPUT',
-    subtitle: 'Simulated Risk Intelligence & Operational Decision Support Demo',
+    subtitle: 'Simulated Risk Intelligence & Illustrative Output Demo',
     timeEstimate: '~60 sec',
   },
   {
