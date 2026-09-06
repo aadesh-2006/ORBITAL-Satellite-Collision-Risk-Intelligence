@@ -122,6 +122,17 @@ export const STORY_STAGES: StoryStageConfig[] = [
     orbitalAltitudeKm: 1400,
     inclinationDeg: 53.2,
   },
+  {
+    id: 'CLOSING',
+    order: 11,
+    label: 'Mission Horizon',
+    code: 'SEC-11',
+    title: 'ORBITAL',
+    subtitle: 'From historical observations to intelligent collision-risk prediction',
+    atmosphere: 'deep-space',
+    orbitalAltitudeKm: 550,
+    inclinationDeg: 53.0,
+  },
 ];
 
 export const STAGE_MAP: Record<StoryStageId, StoryStageConfig> = STORY_STAGES.reduce(

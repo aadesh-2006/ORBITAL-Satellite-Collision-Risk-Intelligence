@@ -10,7 +10,7 @@ import { OurApproachM6Section } from './sections/OurApproachM6Section';
 import { ModelM7Section } from './sections/ModelM7Section';
 import { PredictionM8Section } from './sections/PredictionM8Section';
 import { FinalSystemM9Section } from './sections/FinalSystemM9Section';
-import { ClosingM10Placeholder } from './sections/ClosingM10Placeholder';
+import { ClosingM10Section } from './sections/ClosingM10Section';
 
 const StoryAppContent: React.FC = () => {
   const { currentStageId, goToStage } = useStoryState();
@@ -54,8 +54,9 @@ const StoryAppContent: React.FC = () => {
         return <PredictionM8Section />;
       case 'FINAL_SYSTEM':
         return <FinalSystemM9Section />;
+      case 'CLOSING':
       default:
-        return <ClosingM10Placeholder />;
+        return <ClosingM10Section />;
     }
   };
 

@@ -13,7 +13,8 @@ export type StoryStageId =
   | 'DATA'
   | 'MODEL'
   | 'PREDICTION'
-  | 'FINAL_SYSTEM';
+  | 'FINAL_SYSTEM'
+  | 'CLOSING';
 
 export type SpaceAtmosphere =
   | 'deep-space'      // Sparse, pristine deep cosmos

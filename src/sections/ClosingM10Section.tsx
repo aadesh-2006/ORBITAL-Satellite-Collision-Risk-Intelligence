@@ -5,9 +5,9 @@ import { useParallax } from '../hooks/useParallax';
 import { FadeIn } from '../components/animation/FadeIn';
 import { CrosshairFrame } from '../components/ui/CrosshairFrame';
 import { StatusBadge } from '../components/ui/StatusBadge';
-import { IntelligenceWorkstationVisualizer } from '../components/space/IntelligenceWorkstationVisualizer';
+import { MissionClosingVisualizer } from '../components/space/MissionClosingVisualizer';
 
-interface M9PhaseContent {
+interface M10PhaseContent {
   phase: number;
   badge: string;
   badgeVariant: 'cyan' | 'emerald' | 'amber' | 'ruby' | 'monochrome';
@@ -19,166 +19,117 @@ interface M9PhaseContent {
   tag: string;
 }
 
-const M9_PHASES: M9PhaseContent[] = [
+const M10_PHASES: M10PhaseContent[] = [
   {
     phase: 1,
-    badge: 'STAGE 08 // STEP 01: SYSTEM CONVERGENCE',
-    badgeVariant: 'cyan',
-    title: 'Workstation System Convergence',
-    subtitle: 'Unifying Conjunction Sequences, Neural Models, and Decision Support',
+    badge: 'STAGE 09 // STEP 01: SYSTEM COMPLETE',
+    badgeVariant: 'emerald',
+    title: 'The Complete Research Architecture',
+    subtitle: 'From Historical Conjunction Tracking to Operational Risk Intelligence',
     description:
-      'All previous research layers—raw CDM historical records, astrodynamic feature matrices, temporal attention networks, and probability estimation—converge into a unified aerospace mission analysis workstation.',
+      'We have traced the full scientific pipeline: ingesting multi-pass Conjunction Data Messages, standardizing 103 orbital features, applying temporal positional embeddings, evaluating baseline vs proposed self-attention architectures, and synthesizing actionable risk dossiers.',
     details: [
-      'PIPELINE FUSION: Direct integration from tracking messages to operator risk brief',
-      'CONTINUOUS TIME-SERIES: Replaces single-pass screening with multi-CDM temporal intelligence',
-      'RESEARCH PROTOTYPE: Demonstrates the target operational environment for flight dynamics teams',
-      'AEROSPACE STANDARD: Designed for satellite operators managing dense orbital constellations',
+      'FOUNDATION PROVEN: Multi-stage pipeline unifies astrodynamic physics and sequence modeling',
+      'CONTINUOUS TIME SERIES: Replaces static single-point screening with temporal intelligence',
+      'DUAL-TRACK BENCHMARKING: Rigorous experimental comparison protocol defined',
+      'DECISION SUPPORT: Designed for flight dynamics teams protecting congested orbital orbits',
     ],
-    tag: '[ PROTOTYPE WORKSTATION ]',
+    tag: '[ PIPELINE COMPLETE ]',
   },
   {
     phase: 2,
-    badge: 'STAGE 08 // STEP 02: CONJUNCTION ANALYSIS',
+    badge: 'STAGE 09 // STEP 02: WHAT WE ARE BUILDING',
     badgeVariant: 'cyan',
-    title: 'Live Encounter Telemetry Analysis',
-    subtitle: 'Real-Time Astrodynamic Dossier for Tracked Orbital Pairs',
+    title: 'ORBITAL — Satellite Collision Risk Intelligence',
+    subtitle: 'Learning How Conjunction Risk Evolves Over Time',
     description:
-      'The workstation displays two tracked orbital bodies approaching Time of Closest Approach (TCA). Event metadata synthesizes relative velocity, miss distance, and covariance dimensions into a structured mission dossier.',
+      'The central thesis of ORBITAL is that satellite close-approach events cannot be fully understood from isolated snapshots. By learning from the temporal trajectory of consecutive tracking updates, we aim to deliver earlier, clearer, and more calibrated collision risk assessments.',
     details: [
-      'PRIMARY ASSET: Protected satellite in Low Earth Orbit (642.8 km altitude) [SIMULATED]',
-      'CHASER OBJECT: High-velocity orbital fragment (v_rel = 14.24 km/s) [SIMULATED]',
-      'MISS DISTANCE: 284 m nominal separation with ±32m covariance uncertainty',
-      'SCIENTIFIC HONESTY: Representative simulated event — not live telemetry feed',
+      'CORE HYPOTHESIS: Multi-CDM time series contain predictive signals beyond single static CDMs',
+      'TEMPORAL ATTENTION: Models dynamic covariance contraction and trajectory refinement',
+      'OPERATIONAL VALUE: Reduces false alarm burden and supports human-in-the-loop flight decisions',
+      'OPEN RESEARCH: Built on standardized, open scientific dataset architectures',
     ],
-    tag: '[ PROTOTYPE — SIMULATED DATA ]',
+    tag: '[ PROJECT THESIS ]',
   },
   {
     phase: 3,
-    badge: 'STAGE 08 // STEP 03: RISK EVOLUTION',
-    badgeVariant: 'amber',
-    title: 'Temporal Evidence Trajectory',
-    subtitle: 'Multi-Observation Risk Updating as Sensor Evidence Accumulates',
+    badge: 'STAGE 09 // STEP 03: RESEARCH QUESTION',
+    badgeVariant: 'cyan',
+    title: 'The Central Empirical Question',
+    subtitle: 'Can Temporal Learning Improve Conjunction Risk Prediction?',
     description:
-      'Rather than relying on an isolated static snapshot, the workstation traces the evolving risk trajectory across all received CDMs from T-72h down to T-2h. Risk estimates dynamically adapt as radar passes contract covariance ellipsoids.',
+      'Rather than claiming unverified breakthroughs, we frame our work as a rigorous scientific investigation: Does a Transformer Encoder with temporal attention outperform recurrent baselines (LSTM/GRU) and conventional screening methods when evaluated on real conjunction datasets?',
     details: [
-      'NON-MONOTONIC EVOLUTION: Demonstrates risk updating as new sensor tracks arrive',
-      'PROGRESSIVE REFINEMENT: Shrinking positional uncertainty enables timely maneuver planning',
-      'ILLUSTRATIVE TREND: Depicts dynamic updating workflow without claiming trained results',
-      'OPERATIONAL CLARITY: Alerts flight dynamics teams before maneuver commitment deadlines',
+      'SCIENTIFIC HUMILITY: The answer will be determined strictly through experimental testing',
+      'BASELINE PROTOCOL: Evaluated against optimized LSTM, GRU, and static XGBoost models',
+      'KEY METRICS: F1-score, Precision-Recall AUC, False Alarm Ratio, and Probability Calibration',
+      'NO PREMATURE VICTORY: True performance emerges from empirical validation',
     ],
-    tag: '[ ILLUSTRATIVE RISK EVOLUTION ]',
+    tag: '[ RESEARCH HYPOTHESIS ]',
   },
   {
     phase: 4,
-    badge: 'STAGE 08 // STEP 04: MODEL STATUS',
-    badgeVariant: 'emerald',
-    title: 'Neural Architecture State',
-    subtitle: 'Transparent Inspection of the Proposed Transformer Pipeline',
+    badge: 'STAGE 09 // STEP 04: CURRENT PROJECT STATE',
+    badgeVariant: 'amber',
+    title: 'Transparent Project Status & Audit',
+    subtitle: 'Clear Demarcation Between What Is Implemented vs. Pending Evaluation',
     description:
-      'Inside the workstation, operators can inspect the neural processing graph: 103 CDM input features → linear projection → continuous time-to-TCA embeddings → stacked self-attention encoder → latent event vector → risk prediction head.',
+      'We maintain strict scientific transparency regarding current project readiness. The data pipeline and neural architectures are fully implemented in code; empirical training and comparative benchmark testing represent the next immediate phase.',
     details: [
-      'MODEL STATUS: Proposed Transformer Architecture designed for temporal conjunctions',
-      'TRAINING STATUS: NOT YET TRAINED — model checkpoint under research development',
-      'METRIC HONESTY: Zero fabricated accuracy, F1, or AUC scores are displayed',
-      'ATTENTION REASONING: Depicts qualitative structural connectivity across observation steps',
+      'DATASET: ESA Collision Avoidance Challenge (162,634 rows, 13,154 events, 103 features)',
+      'MODELS IMPLEMENTED: Recurrent Baselines (LSTM/GRU) + Proposed Temporal Transformer',
+      'STATUS: Code complete prototype & research pipeline ready for training execution',
+      'EVALUATION: Empirical benchmark results pending model execution on hardware',
     ],
-    formula: '\text{Input } X \in \mathbb{R}^{5 \times 103} \longrightarrow \text{Encoder}(X) \longrightarrow h_{\text{event}} \longrightarrow \hat{y}',
-    tag: '[ PROPOSED ARCHITECTURE — NOT YET TRAINED ]',
+    tag: '[ PROTOTYPE / RESEARCH STATE ]',
   },
   {
     phase: 5,
-    badge: 'STAGE 08 // STEP 05: PREDICTION OUTPUT',
-    badgeVariant: 'ruby',
-    title: 'Simulated Collision Probability Output',
-    subtitle: 'Demonstrative Risk Score and Severity Classification',
+    badge: 'STAGE 09 // STEP 05: FUTURE EXTENSIONS',
+    badgeVariant: 'cyan',
+    title: 'Post-Baseline Roadmap & Data Horizons',
+    subtitle: 'Planned Integration of Global Aerospace Tracking Archives',
     description:
-      'The prediction console outputs an illustrative collision probability estimate. In this simulated demonstration, the risk score is classified as ELEVATED, signaling the need for operator review.',
+      'Following baseline validation, future milestones will extend the data pipeline to incorporate additional global tracking archives, real-time TLE propagation, and satellite catalog physical metadata.',
     details: [
-      'COLLISION PROBABILITY (P_c): 0.00042 [SIMULATED DEMO VALUE]',
-      'RISK SEVERITY: ELEVATED [ILLUSTRATIVE CLASSIFICATION]',
-      'SCIENTIFIC HONESTY: Strictly illustrative output to demonstrate UI layout',
-      'NO AUTONOMOUS CLAIMS: No automatic maneuver execution or delta-V commands',
+      'NASA CARA ARCHIVE: Ingesting diverse conjunction assessment records across LEO and GEO',
+      'SPACE-TRACK / CELESTRAK: Continuous orbital ephemeris and perturbation parameters',
+      'ESA DISCOS DATABASE: Satellite cross-sectional areas, mass properties, and operational status',
+      'PLANNED EXTENSIONS: Transparently identified as future roadmap objectives',
     ],
-    tag: '[ SIMULATED OUTPUT — MODEL NOT YET TRAINED ]',
+    tag: '[ PLANNED EXTENSIONS ]',
   },
   {
     phase: 6,
-    badge: 'STAGE 08 // STEP 06: INTELLIGENCE SUMMARY',
+    badge: 'STAGE 09 // STEP 06: MISSION HORIZON',
     badgeVariant: 'emerald',
-    title: 'Integrated Mission Analysis Brief',
-    subtitle: 'Consolidated High-Density Dossier for Flight Operators',
-    description:
-      'All encounter telemetry, temporal risk trajectories, and neural model outputs are aggregated into a single high-density mission brief, eliminating fragmented tools and manual spreadsheet screening.',
-    details: [
-      'UNIFIED INTERFACE: Conjunction state, TCA countdown, miss distance, and model output in one HUD',
-      'SCALABLE SCREENING: Accelerates operator triage during major orbital debris storms',
-      'DECISION-READY CONTEXT: Presents full trajectory history alongside point estimates',
-      'PROTOTYPE BENCHMARK: Demonstrates next-generation aerospace intelligence workflow',
-    ],
-    tag: '[ INTEGRATED INTELLIGENCE SUMMARY ]',
-  },
-  {
-    phase: 7,
-    badge: 'STAGE 08 // STEP 07: RESEARCH BOUNDARY',
-    badgeVariant: 'amber',
-    title: 'Research vs. Operational Boundary',
-    subtitle: 'Clear Scope: Decision Support, Not Autonomous Thruster Firing',
-    description:
-      'We explicitly define the operational boundary of this project: ORBITAL is a Decision Support Intelligence System for satellite conjunction risk prediction, NOT an autonomous collision avoidance or maneuver execution system.',
-    details: [
-      'IN SCOPE: Automated multi-CDM ingestion, sequence modeling, and calibrated risk scoring',
-      'OUT OF SCOPE: Autonomous thruster burns, propulsion commands, and avoidance maneuvers',
-      'FLIGHT SAFETY: Preserves human-in-the-loop authority for all spacecraft commands',
-      'AEROSPACE REALISM: Aligns directly with international space agency operational standards',
-    ],
-    tag: '[ DECISION SUPPORT — NOT AUTONOMOUS ]',
-  },
-  {
-    phase: 8,
-    badge: 'STAGE 08 // STEP 08: COMPLETE PIPELINE',
-    badgeVariant: 'cyan',
-    title: 'Complete Research & Evaluation Protocol',
-    subtitle: 'Side-by-Side Benchmarking of Baselines vs. Proposed Transformer',
-    description:
-      'The overarching research pipeline spans raw ESA tracking data ingestion, temporal matrix preprocessing, and rigorous side-by-side benchmarking between Recurrent Baselines (LSTM/GRU) and the Proposed Temporal Transformer.',
-    details: [
-      'CONTROLLED EXPERIMENT: Baseline and Proposed models evaluated on identical test splits',
-      'NO UNPROVEN CLAIMS: Transformer is not claimed to outperform baselines prior to testing',
-      'SCIENTIFIC INTEGRITY: Relative performance will be determined strictly via empirical metrics',
-      'REPRODUCIBLE PROTOCOL: Standardized training, validation, and test protocols on 162K+ records',
-    ],
-    tag: '[ BASELINE VS PROPOSED BENCHMARK ]',
-  },
-  {
-    phase: 9,
-    badge: 'STAGE 08 // STEP 09: MISSION HORIZON',
-    badgeVariant: 'emerald',
-    title: 'From Data to Intelligent Risk Prediction',
+    title: 'From Conjunction Data to Intelligent Risk Prediction',
     subtitle: 'Historical Observations → Temporal Learning → Collision-Risk Intelligence',
     description:
-      'We have completed the architectural journey from orbital physics and conjunction uncertainty to sequence-based deep learning and operational decision support.',
+      'As Low Earth Orbit grows exponentially more congested, safeguarding satellite infrastructure demands next-generation predictive intelligence. ORBITAL establishes the scientific foundation for learning from the temporal evolution of orbital close approaches.',
     details: [
-      'JOURNEY COMPLETE: M1 through M9 fully establishes the complete research narrative',
-      'FOUNDATION READY: Prepared for empirical model training and dataset benchmarking',
-      'CLOSING PERSPECTIVE: Next, discover the broader mission horizon and project conclusions',
-      'ADVANCEMENT: Proceed to Stage 09 / M10 for final research conclusions and project summary',
+      'RESEARCH COMPLETE: M1 through M10 presentation experience successfully concluded',
+      'FULL CIRCLE: Return to the orbital cosmos that began the journey in Stage 00',
+      'EXPLORATION CONTROLS: Replay the complete mission narrative or jump to any stage',
+      'RESEARCH ARTIFACT: ORBITAL — Satellite Collision Risk Intelligence prototype',
     ],
-    tag: '[ WORKSTATION DEMO COMPLETE ]',
+    tag: '[ PRESENTATION COMPLETE ]',
   },
 ];
 
-export const FinalSystemM9Section: React.FC = () => {
+export const ClosingM10Section: React.FC = () => {
   const { currentStageId, goToStage } = useStoryState();
   const { x, y } = useParallax(0.04);
   const [phase, setPhase] = useState<number>(1);
 
-  const currentContent = M9_PHASES[phase - 1];
+  const currentContent = M10_PHASES[phase - 1];
 
   const handleNextPhase = useCallback(() => {
-    if (phase < 9) {
+    if (phase < 6) {
       setPhase((prev) => prev + 1);
     } else {
-      goToStage('CLOSING');
+      goToStage('LANDING'); // Replay from start
     }
   }, [phase, goToStage]);
 
@@ -186,18 +137,18 @@ export const FinalSystemM9Section: React.FC = () => {
     if (phase > 1) {
       setPhase((prev) => prev - 1);
     } else {
-      goToStage('PREDICTION');
+      goToStage('FINAL_SYSTEM');
     }
   }, [phase, goToStage]);
 
-  const handleReset = useCallback(() => {
-    setPhase(1);
-  }, []);
+  const handleReplayMission = useCallback(() => {
+    goToStage('LANDING');
+  }, [goToStage]);
 
   // Keyboard navigation
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (currentStageId !== 'FINAL_SYSTEM') return;
+      if (currentStageId !== 'CLOSING') return;
 
       if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === ' ') {
         e.preventDefault();
@@ -210,7 +161,7 @@ export const FinalSystemM9Section: React.FC = () => {
         setPhase(1);
       } else if (e.key === 'End') {
         e.preventDefault();
-        setPhase(9);
+        setPhase(6);
       }
     };
 
@@ -233,14 +184,14 @@ export const FinalSystemM9Section: React.FC = () => {
         zIndex: 5,
       }}
     >
-      {/* Background Workstation Visualizer */}
-      <IntelligenceWorkstationVisualizer
+      {/* Background Visualizer Component */}
+      <MissionClosingVisualizer
         phase={phase}
         parallaxX={x}
         parallaxY={y}
       />
 
-      {/* Top Header / Workstation HUD */}
+      {/* Top Header HUD */}
       <div
         style={{
           display: 'flex',
@@ -265,7 +216,7 @@ export const FinalSystemM9Section: React.FC = () => {
                   letterSpacing: '0.12em',
                 }}
               >
-                PHASE {phase.toString().padStart(2, '0')} / 09
+                PHASE {phase.toString().padStart(2, '0')} / 06
               </span>
             </div>
             <h1
@@ -294,7 +245,7 @@ export const FinalSystemM9Section: React.FC = () => {
           </div>
         </FadeIn>
 
-        {/* Top Right: Tag & Replay */}
+        {/* Top Right: Tag & Replay Button */}
         <FadeIn direction="down" distance={12} duration={0.8} delay={0.1}>
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '8px' }}>
             <div
@@ -330,7 +281,7 @@ export const FinalSystemM9Section: React.FC = () => {
             </div>
 
             <button
-              onClick={handleReset}
+              onClick={handleReplayMission}
               style={{
                 background: 'rgba(255, 255, 255, 0.04)',
                 border: '1px solid var(--border-subtle)',
@@ -352,13 +303,13 @@ export const FinalSystemM9Section: React.FC = () => {
                 e.currentTarget.style.borderColor = 'var(--border-subtle)';
               }}
             >
-              ↺ RESET WORKSTATION
+              ↺ REPLAY MISSION STORY (STAGE 00)
             </button>
           </div>
         </FadeIn>
       </div>
 
-      {/* Main Narrative Overlay Card */}
+      {/* Narrative Card Overlay */}
       <div
         style={{
           display: 'flex',
@@ -405,24 +356,6 @@ export const FinalSystemM9Section: React.FC = () => {
                 {currentContent.description}
               </p>
 
-              {currentContent.formula && (
-                <div
-                  style={{
-                    background: 'rgba(255, 255, 255, 0.03)',
-                    border: '1px solid rgba(255, 255, 255, 0.08)',
-                    borderRadius: '3px',
-                    padding: '8px 14px',
-                    marginBottom: '14px',
-                    fontFamily: 'var(--font-mono)',
-                    fontSize: '0.76rem',
-                    color: '#34d399',
-                    letterSpacing: '0.04em',
-                  }}
-                >
-                  {currentContent.formula}
-                </div>
-              )}
-
               <div
                 style={{
                   display: 'flex',
@@ -455,7 +388,7 @@ export const FinalSystemM9Section: React.FC = () => {
         </AnimatePresence>
       </div>
 
-      {/* Bottom Navigation & Timeline Controls */}
+      {/* Bottom Navigation & Timeline */}
       <div
         style={{
           display: 'flex',
@@ -467,7 +400,6 @@ export const FinalSystemM9Section: React.FC = () => {
           paddingTop: '16px',
         }}
       >
-        {/* Navigation Buttons */}
         <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
           <button
             onClick={handlePrevPhase}
@@ -492,15 +424,15 @@ export const FinalSystemM9Section: React.FC = () => {
               e.currentTarget.style.borderColor = 'var(--border-subtle)';
             }}
           >
-            ← {phase === 1 ? 'STAGE 07 // PREDICTION' : 'PREV STEP'}
+            ← {phase === 1 ? 'STAGE 08 // FINAL SYSTEM' : 'PREV STEP'}
           </button>
 
           <button
             onClick={handleNextPhase}
             style={{
-              background: phase === 9 ? 'rgba(52, 211, 153, 0.15)' : 'rgba(255, 255, 255, 0.06)',
-              border: phase === 9 ? '1px solid var(--accent-emerald)' : '1px solid var(--border-subtle)',
-              color: phase === 9 ? '#34d399' : '#ffffff',
+              background: phase === 6 ? 'rgba(52, 211, 153, 0.15)' : 'rgba(255, 255, 255, 0.06)',
+              border: phase === 6 ? '1px solid var(--accent-emerald)' : '1px solid var(--border-subtle)',
+              color: phase === 6 ? '#34d399' : '#ffffff',
               fontFamily: 'var(--font-mono)',
               fontSize: '0.7rem',
               letterSpacing: '0.1em',
@@ -511,19 +443,19 @@ export const FinalSystemM9Section: React.FC = () => {
               transition: 'all 0.2s ease',
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.borderColor = phase === 9 ? '#34d399' : '#ffffff';
+              e.currentTarget.style.borderColor = phase === 6 ? '#34d399' : '#ffffff';
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.borderColor = phase === 9 ? 'var(--accent-emerald)' : 'var(--border-subtle)';
+              e.currentTarget.style.borderColor = phase === 6 ? 'var(--accent-emerald)' : 'var(--border-subtle)';
             }}
           >
-            {phase === 9 ? 'STAGE 08 COMPLETE (PROCEED TO M10) →' : 'NEXT STEP →'}
+            {phase === 6 ? '↺ REPLAY MISSION FROM STAGE 00' : 'NEXT STEP →'}
           </button>
         </div>
 
-        {/* Phase Indicator Bubbles */}
+        {/* Phase Indicator Dots */}
         <div style={{ display: 'flex', gap: '6px', alignItems: 'center' }}>
-          {M9_PHASES.map((p) => (
+          {M10_PHASES.map((p) => (
             <button
               key={p.phase}
               onClick={() => setPhase(p.phase)}
@@ -542,7 +474,7 @@ export const FinalSystemM9Section: React.FC = () => {
                 transition: 'all 0.3s ease',
                 padding: 0,
               }}
-              title={`Step ${p.phase}: ${p.title}`}
+              title={`Phase ${p.phase}: ${p.title}`}
             />
           ))}
         </div>
