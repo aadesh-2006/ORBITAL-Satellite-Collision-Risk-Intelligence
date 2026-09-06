@@ -6,7 +6,7 @@ import { FadeIn } from '../components/animation/FadeIn';
 import { CrosshairFrame } from '../components/ui/CrosshairFrame';
 import { StatusBadge } from '../components/ui/StatusBadge';
 
-export const PredictionM8Placeholder: React.FC = () => {
+export const FinalSystemM9Placeholder: React.FC = () => {
   const { goToStage } = useStoryState();
 
   return (
@@ -39,7 +39,7 @@ export const PredictionM8Placeholder: React.FC = () => {
         >
           <FadeIn direction="down" distance={10} duration={0.8}>
             <StatusBadge
-              label="STAGE 07 // SIMULATED PREDICTION"
+              label="STAGE 08 // FINAL SYSTEM & DASHBOARD"
               variant="emerald"
             />
           </FadeIn>
@@ -55,7 +55,7 @@ export const PredictionM8Placeholder: React.FC = () => {
                 fontFamily: 'var(--font-display)',
               }}
             >
-              Risk Prediction & Evaluation
+              Operational System Interface
             </h2>
           </FadeIn>
 
@@ -69,13 +69,13 @@ export const PredictionM8Placeholder: React.FC = () => {
                 letterSpacing: '0.1em',
               }}
             >
-              [ M8 MODULE TARGET � STANDING BY ]
+              [ M9 MODULE TARGET — STANDING BY ]
             </div>
           </FadeIn>
 
           <FadeIn direction="up" distance={10} duration={0.8} delay={0.3}>
             <button
-              onClick={() => goToStage('MODEL')}
+              onClick={() => goToStage('PREDICTION')}
               style={{
                 marginTop: '28px',
                 background: 'rgba(255, 255, 255, 0.04)',
@@ -98,7 +98,7 @@ export const PredictionM8Placeholder: React.FC = () => {
                 e.currentTarget.style.borderColor = 'var(--border-subtle)';
               }}
             >
-              ? RETURN TO PROPOSED AI ARCHITECTURE (M7)
+              ← RETURN TO SIMULATED PREDICTION (M8)
             </button>
           </FadeIn>
         </CrosshairFrame>

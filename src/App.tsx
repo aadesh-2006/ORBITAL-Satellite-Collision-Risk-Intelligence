@@ -8,7 +8,8 @@ import { OurThinkingM4Section } from './sections/OurThinkingM4Section';
 import { OurPlanM5Section } from './sections/OurPlanM5Section';
 import { OurApproachM6Section } from './sections/OurApproachM6Section';
 import { ModelM7Section } from './sections/ModelM7Section';
-import { PredictionM8Placeholder } from './sections/PredictionM8Placeholder';
+import { PredictionM8Section } from './sections/PredictionM8Section';
+import { FinalSystemM9Placeholder } from './sections/FinalSystemM9Placeholder';
 
 const StoryAppContent: React.FC = () => {
   const { currentStageId, goToStage } = useStoryState();
@@ -49,9 +50,10 @@ const StoryAppContent: React.FC = () => {
       case 'MODEL':
         return <ModelM7Section />;
       case 'PREDICTION':
+        return <PredictionM8Section />;
       case 'FINAL_SYSTEM':
       default:
-        return <PredictionM8Placeholder />;
+        return <FinalSystemM9Placeholder />;
     }
   };
 
