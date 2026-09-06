@@ -774,9 +774,9 @@ export const Screen6ProposedModel: React.FC = () => {
         style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(7, 1fr)',
-          gap: '8px',
+          gap: '10px',
           width: '100%',
-          marginBottom: '28px',
+          marginBottom: '24px',
         }}
       >
         {[
@@ -792,40 +792,43 @@ export const Screen6ProposedModel: React.FC = () => {
             key={idx}
             style={{
               background: 'rgba(10, 16, 24, 0.95)',
-              border: idx === 3 || idx === 4 ? '1px solid var(--accent-emerald)' : '1px solid var(--border-subtle)',
-              borderRadius: '4px',
-              padding: '16px 8px',
+              border: idx === 3 || idx === 4 ? '1.5px solid var(--accent-emerald)' : '1px solid var(--border-subtle)',
+              borderRadius: '5px',
+              padding: '14px 6px',
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
-              gap: '4px',
+              gap: '6px',
             }}
           >
             <div
               className="telemetry-mono"
               style={{
                 color: idx === 3 || idx === 4 ? 'var(--accent-emerald)' : 'var(--text-tertiary)',
-                fontSize: '0.65rem',
-                fontWeight: 600,
+                fontSize: '0.74rem',
+                fontWeight: 700,
+                letterSpacing: '0.06em',
               }}
             >
               STAGE {item.step}
             </div>
             <div
               style={{
-                fontSize: '0.78rem',
+                fontSize: '0.94rem',
                 color: '#ffffff',
-                fontWeight: 600,
+                fontWeight: 700,
                 fontFamily: 'var(--font-mono)',
+                letterSpacing: '-0.01em',
               }}
             >
               {item.title}
             </div>
             <div
               style={{
-                fontSize: '0.68rem',
-                color: 'var(--text-secondary)',
+                fontSize: '0.78rem',
+                color: idx === 3 || idx === 4 ? '#a7f3d0' : 'var(--text-secondary)',
                 fontFamily: 'var(--font-sans)',
+                fontWeight: 500,
               }}
             >
               {item.desc}
@@ -838,7 +841,7 @@ export const Screen6ProposedModel: React.FC = () => {
       <div
         style={{
           width: '100%',
-          height: '240px',
+          height: '260px',
           background: 'rgba(8, 12, 18, 0.8)',
           border: '1px solid var(--border-subtle)',
           borderRadius: '6px',
@@ -923,7 +926,7 @@ export const Screen7SimulatedDemo: React.FC = () => {
       <div
         style={{
           width: '100%',
-          height: '380px',
+          height: '420px',
           background: 'rgba(8, 12, 18, 0.85)',
           border: '1px solid rgba(248, 113, 113, 0.4)',
           borderRadius: '6px',

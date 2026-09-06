@@ -450,57 +450,247 @@ export const PredictionSimulationVisualizer: React.FC<PredictionSimulationVisual
         {/* PHASE 7: SIMULATED RISK OUTPUT */}
         {phase === 7 && (
           <g transform={`translate(${cx}, ${cy})`}>
-            <rect x="-260" y="-150" width="520" height="300" fill="rgba(10, 16, 24, 0.95)" stroke="rgba(248, 113, 113, 0.6)" strokeWidth="1.4" rx="6" />
+            {/* Outer Workstation Panel */}
+            <rect
+              x="-560"
+              y="-270"
+              width="1120"
+              height="540"
+              fill="rgba(10, 16, 24, 0.96)"
+              stroke="rgba(248, 113, 113, 0.7)"
+              strokeWidth="1.8"
+              rx="8"
+            />
 
-            <text x="-230" y="-120" fill="var(--accent-ruby)" fontSize="10" fontFamily="var(--font-mono)" fontWeight="600" letterSpacing="0.1em">
+            {/* Top Dossier Header */}
+            <text
+              x="-520"
+              y="-225"
+              fill="var(--accent-ruby)"
+              fontSize="18"
+              fontFamily="var(--font-mono)"
+              fontWeight="700"
+              letterSpacing="0.1em"
+            >
               MODEL OUTPUT // [ SIMULATED DEMO ]
             </text>
-            <text x="230" y="-120" textAnchor="end" fill="var(--text-tertiary)" fontSize="8" fontFamily="var(--font-mono)">
-              SIM-EVT-9042
+            <text
+              x="520"
+              y="-225"
+              textAnchor="end"
+              fill="var(--text-tertiary)"
+              fontSize="15"
+              fontFamily="var(--font-mono)"
+            >
+              CONJUNCTION EVENT: SIM-EVT-9042
             </text>
-            <line x1="-230" y1="-105" x2="230" y2="-105" stroke="rgba(255, 255, 255, 0.12)" strokeWidth="0.8" />
+            <line
+              x1="-520"
+              y1="-205"
+              x2="520"
+              y2="-205"
+              stroke="rgba(255, 255, 255, 0.16)"
+              strokeWidth="1.2"
+            />
 
-            <g transform="translate(-110, -35)">
-              <rect x="-100" y="-45" width="200" height="90" fill="rgba(248, 113, 113, 0.08)" stroke="rgba(248, 113, 113, 0.4)" strokeWidth="1" rx="4" />
-              <text x="0" y="-22" textAnchor="middle" fill="var(--text-secondary)" fontSize="8" fontFamily="var(--font-mono)">
+            {/* Left Card: Collision Probability */}
+            <g transform="translate(-270, -75)">
+              <rect
+                x="-240"
+                y="-105"
+                width="480"
+                height="210"
+                fill="rgba(248, 113, 113, 0.09)"
+                stroke="rgba(248, 113, 113, 0.55)"
+                strokeWidth="1.6"
+                rx="6"
+              />
+              <text
+                x="0"
+                y="-60"
+                textAnchor="middle"
+                fill="var(--text-secondary)"
+                fontSize="15"
+                fontFamily="var(--font-mono)"
+                fontWeight="600"
+                letterSpacing="0.06em"
+              >
                 PREDICTED COLLISION PROBABILITY (P_c)
               </text>
-              <text x="0" y="10" textAnchor="middle" fill="#f87171" fontSize="22" fontFamily="var(--font-mono)" fontWeight="700">
+              <text
+                x="0"
+                y="15"
+                textAnchor="middle"
+                fill="#f87171"
+                fontSize="62"
+                fontFamily="var(--font-mono)"
+                fontWeight="800"
+                letterSpacing="-0.02em"
+              >
                 0.00042
               </text>
-              <text x="0" y="30" textAnchor="middle" fill="var(--accent-amber)" fontSize="7.5" fontFamily="var(--font-mono)">
+              <text
+                x="0"
+                y="65"
+                textAnchor="middle"
+                fill="var(--accent-amber)"
+                fontSize="14"
+                fontFamily="var(--font-mono)"
+                fontWeight="600"
+                letterSpacing="0.08em"
+              >
                 [ SIMULATED DEMO VALUE ]
               </text>
             </g>
 
-            <g transform="translate(110, -35)">
-              <rect x="-100" y="-45" width="200" height="90" fill="rgba(251, 191, 36, 0.08)" stroke="rgba(251, 191, 36, 0.4)" strokeWidth="1" rx="4" />
-              <text x="0" y="-22" textAnchor="middle" fill="var(--text-secondary)" fontSize="8" fontFamily="var(--font-mono)">
+            {/* Right Card: Risk Severity Class */}
+            <g transform="translate(270, -75)">
+              <rect
+                x="-240"
+                y="-105"
+                width="480"
+                height="210"
+                fill="rgba(251, 191, 36, 0.09)"
+                stroke="rgba(251, 191, 36, 0.55)"
+                strokeWidth="1.6"
+                rx="6"
+              />
+              <text
+                x="0"
+                y="-60"
+                textAnchor="middle"
+                fill="var(--text-secondary)"
+                fontSize="15"
+                fontFamily="var(--font-mono)"
+                fontWeight="600"
+                letterSpacing="0.06em"
+              >
                 RISK SEVERITY CLASS
               </text>
-              <text x="0" y="10" textAnchor="middle" fill="#fbbf24" fontSize="18" fontFamily="var(--font-mono)" fontWeight="600">
+              <text
+                x="0"
+                y="14"
+                textAnchor="middle"
+                fill="#fbbf24"
+                fontSize="52"
+                fontFamily="var(--font-mono)"
+                fontWeight="800"
+                letterSpacing="0.04em"
+              >
                 ELEVATED
               </text>
-              <text x="0" y="30" textAnchor="middle" fill="var(--text-tertiary)" fontSize="7.5" fontFamily="var(--font-mono)">
-                [ ILLUSTRATIVE CLASS ]
+              <text
+                x="0"
+                y="65"
+                textAnchor="middle"
+                fill="var(--text-tertiary)"
+                fontSize="14"
+                fontFamily="var(--font-mono)"
+                fontWeight="600"
+                letterSpacing="0.08em"
+              >
+                [ ACTION THRESHOLD EXCEEDED ]
               </text>
             </g>
 
-            <g transform="translate(0, 70)">
-              <text x="-230" y="-12" fill="var(--text-secondary)" fontSize="7.5" fontFamily="var(--font-mono)">
+            {/* Bottom Risk Threshold Comparison Gauge */}
+            <g transform="translate(0, 95)">
+              <text
+                x="-520"
+                y="5"
+                fill="#ffffff"
+                fontSize="15"
+                fontFamily="var(--font-mono)"
+                fontWeight="600"
+              >
                 STANDARD OPERATIONAL THRESHOLD: 1.0 × 10^(-4) (0.00010)
               </text>
-              <rect x="-230" y="0" width="460" height="12" fill="rgba(255, 255, 255, 0.05)" stroke="rgba(255, 255, 255, 0.15)" strokeWidth="0.8" rx="2" />
-              <rect x="-230" y="0" width="310" height="12" fill="url(#m8GlowRuby)" rx="2" />
-              <line x1="-80" y1="-4" x2="-80" y2="16" stroke="#fbbf24" strokeWidth="1.5" />
-              <text x="-80" y="28" textAnchor="middle" fill="#fbbf24" fontSize="7" fontFamily="var(--font-mono)">
+              <text
+                x="520"
+                y="5"
+                textAnchor="end"
+                fill="#f87171"
+                fontSize="15"
+                fontFamily="var(--font-mono)"
+                fontWeight="700"
+              >
+                CURRENT RISK: 4.2× THRESHOLD
+              </text>
+
+              <rect
+                x="-520"
+                y="20"
+                width="1040"
+                height="24"
+                fill="rgba(255, 255, 255, 0.06)"
+                stroke="rgba(255, 255, 255, 0.2)"
+                strokeWidth="1.2"
+                rx="4"
+              />
+              <rect
+                x="-520"
+                y="20"
+                width="750"
+                height="24"
+                fill="url(#m8GlowRuby)"
+                rx="4"
+              />
+
+              {/* Threshold Marker */}
+              <line
+                x1="-180"
+                y1="14"
+                x2="-180"
+                y2="50"
+                stroke="#fbbf24"
+                strokeWidth="2.5"
+              />
+              <text
+                x="-180"
+                y="70"
+                textAnchor="middle"
+                fill="#fbbf24"
+                fontSize="13"
+                fontFamily="var(--font-mono)"
+                fontWeight="700"
+              >
                 THRESHOLD (10^-4)
+              </text>
+
+              {/* Current Pc Marker */}
+              <line
+                x1="230"
+                y1="14"
+                x2="230"
+                y2="50"
+                stroke="#f87171"
+                strokeWidth="2.5"
+              />
+              <text
+                x="230"
+                y="70"
+                textAnchor="middle"
+                fill="#f87171"
+                fontSize="13"
+                fontFamily="var(--font-mono)"
+                fontWeight="700"
+              >
+                PREDICTED P_c: 4.2 × 10^-4
               </text>
             </g>
 
-            <g transform="translate(0, 125)">
-              <text x="0" y="0" textAnchor="middle" fill="var(--text-tertiary)" fontSize="7" fontFamily="var(--font-mono)">
-                CONFIDENCE: NOT AVAILABLE — MODEL NOT TRAINED // PROTOTYPE SYSTEM INTERFACE ONLY
+            {/* Footer Prototype Notice */}
+            <g transform="translate(0, 230)">
+              <text
+                x="0"
+                y="0"
+                textAnchor="middle"
+                fill="var(--text-tertiary)"
+                fontSize="13"
+                fontFamily="var(--font-mono)"
+                letterSpacing="0.08em"
+              >
+                CONFIDENCE: NOT AVAILABLE — MODEL NOT TRAINED // PROTOTYPE DECISION SUPPORT INTERFACE
               </text>
             </g>
           </g>

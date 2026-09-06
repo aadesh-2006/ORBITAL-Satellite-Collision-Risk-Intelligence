@@ -840,68 +840,81 @@ export const ModelArchitectureVisualizer: React.FC<ModelArchitectureVisualizerPr
         {phase === 10 && (
           <g transform={`translate(${cx}, ${cy})`}>
             {[
-              { title: 'CDM SEQUENCE', sub: 'Input Observations', x: -400, w: 100 },
-              { title: 'PROJECTION', sub: 'Feature Embedding', x: -280, w: 100 },
-              { title: 'POSITIONAL INFO', sub: 'Time Encoding', x: -160, w: 100 },
-              { title: 'TRANSFORMER × N', sub: 'Multi-Head Attention', x: -20, w: 130, highlight: true },
-              { title: 'AGGREGATION', sub: 'Temporal Pooling', x: 130, w: 110 },
-              { title: 'REPRESENTATION', sub: 'Conjunction Vector', x: 260, w: 110 },
-              { title: 'PREDICTION HEAD', sub: 'P(risk) Output', x: 390, w: 110 },
+              { title: 'CDM SEQUENCE', sub: '103 Features (x_t)', x: -750, w: 210 },
+              { title: 'PROJECTION', sub: 'Dense Latent (e_t)', x: -500, w: 210 },
+              { title: 'POSITIONAL INFO', sub: 'Time-to-TCA (P_t)', x: -250, w: 210 },
+              { title: 'TRANSFORMER × N', sub: 'Multi-Head Attention', x: 0, w: 240, highlight: true },
+              { title: 'AGGREGATION', sub: 'Temporal Pooling', x: 250, w: 210 },
+              { title: 'REPRESENTATION', sub: 'Conjunction Vector', x: 500, w: 210 },
+              { title: 'PREDICTION HEAD', sub: 'P(risk) Probability', x: 750, w: 210 },
             ].map((blk, idx) => (
               <g key={blk.title} transform={`translate(${blk.x}, 0)`}>
                 <rect
                   x={-blk.w / 2}
-                  y="-24"
+                  y="-55"
                   width={blk.w}
-                  height="48"
+                  height="110"
                   fill="rgba(10, 16, 24, 0.95)"
-                  stroke={blk.highlight ? 'rgba(52, 211, 153, 0.65)' : 'var(--border-subtle)'}
-                  strokeWidth={blk.highlight ? 1.2 : 0.8}
-                  rx="2"
+                  stroke={blk.highlight ? '#34d399' : 'rgba(255, 255, 255, 0.22)'}
+                  strokeWidth={blk.highlight ? 2.5 : 1.4}
+                  rx="6"
+                  filter={blk.highlight ? 'url(#archGlow)' : undefined}
                 />
                 <text
                   x="0"
-                  y="-6"
+                  y="-14"
                   textAnchor="middle"
                   fill={blk.highlight ? '#34d399' : '#ffffff'}
-                  fontSize="6.2"
+                  fontSize="16"
                   fontFamily="var(--font-mono)"
-                  letterSpacing="0.08em"
-                  fontWeight={blk.highlight ? '600' : '500'}
+                  letterSpacing="0.06em"
+                  fontWeight="700"
                 >
                   {blk.title}
                 </text>
                 <text
                   x="0"
-                  y="10"
+                  y="20"
                   textAnchor="middle"
-                  fill="var(--text-tertiary)"
-                  fontSize="5.2"
+                  fill={blk.highlight ? '#a7f3d0' : 'var(--text-secondary)'}
+                  fontSize="13"
                   fontFamily="var(--font-mono)"
+                  fontWeight="500"
                 >
                   {blk.sub}
                 </text>
 
                 {idx < 6 && (
                   <g>
-                    <line x1={blk.w / 2} y1="0" x2={blk.w / 2 + 18} y2="0" stroke="rgba(255, 255, 255, 0.25)" strokeWidth="0.8" />
+                    <line
+                      x1={blk.w / 2 + 4}
+                      y1="0"
+                      x2={blk.w / 2 + 36}
+                      y2="0"
+                      stroke={blk.highlight ? '#34d399' : 'rgba(255, 255, 255, 0.45)'}
+                      strokeWidth="2.5"
+                    />
+                    <polygon
+                      points={`${blk.w / 2 + 36},0 ${blk.w / 2 + 28},-5 ${blk.w / 2 + 28},5`}
+                      fill={blk.highlight ? '#34d399' : 'rgba(255, 255, 255, 0.55)'}
+                    />
                   </g>
                 )}
               </g>
             ))}
 
-            <g transform="translate(0, 75)">
+            <g transform="translate(0, 140)">
               <text
                 x="0"
                 y="0"
                 textAnchor="middle"
                 fill="var(--accent-emerald)"
-                fontSize="7.5"
+                fontSize="18"
                 fontFamily="var(--font-mono)"
                 letterSpacing="0.14em"
-                fontWeight="500"
+                fontWeight="600"
               >
-                PROPOSED ARCHITECTURE // TO BE TRAINED &amp; EVALUATED
+                PROPOSED ARCHITECTURE // END-TO-END TEMPORAL REASONING PIPELINE
               </text>
             </g>
           </g>
