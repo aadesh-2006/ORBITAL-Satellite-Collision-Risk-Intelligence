@@ -1,0 +1,63 @@
+:root {
+  /* Core Chromatic Foundation - Pure Aerospace Black */
+  --bg-pure-black: #000000;
+  --bg-space-deep: #040506;
+  --bg-surface-elevated: #0a0c0e;
+  --bg-surface-overlay: rgba(10, 12, 14, 0.8);
+
+  /* Monochrome Spectrum */
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-tertiary: #475569;
+  --text-muted: #334155;
+
+  /* Technical Aerospace Accents - Restrained & Functional */
+  --accent-cyan-raw: 56, 189, 248;
+  --accent-cyan: rgba(var(--accent-cyan-raw), 0.9);
+  --accent-cyan-subtle: rgba(var(--accent-cyan-raw), 0.12);
+
+  --accent-emerald-raw: 52, 211, 153;
+  --accent-emerald: rgba(var(--accent-emerald-raw), 0.9);
+  --accent-emerald-subtle: rgba(var(--accent-emerald-raw), 0.12);
+
+  --accent-amber-raw: 251, 191, 36;
+  --accent-amber: rgba(var(--accent-amber-raw), 0.9);
+  --accent-amber-subtle: rgba(var(--accent-amber-raw), 0.12);
+
+  --accent-ruby-raw: 248, 113, 113;
+  --accent-ruby: rgba(var(--accent-ruby-raw), 0.9);
+  --accent-ruby-subtle: rgba(var(--accent-ruby-raw), 0.12);
+
+  /* Aerospace Grid & Border Tokens */
+  --border-hairline: rgba(255, 255, 255, 0.07);
+  --border-subtle: rgba(255, 255, 255, 0.12);
+  --border-strong: rgba(255, 255, 255, 0.22);
+  --border-accent: rgba(var(--accent-emerald-raw), 0.35);
+
+  /* Typography Systems */
+  --font-mono: 'IBM Plex Mono', 'SF Mono', Consolas, Menlo, monospace;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Space Grotesk', 'Inter', -apple-system, sans-serif;
+
+  /* Spacing & Layout Tokens */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+  --space-3xl: 64px;
+
+  /* Easing Curves - Aerospace Inertial Physics */
+  --ease-cinematic: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-smooth: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --ease-drift: cubic-bezier(0.33, 1, 0.68, 1);
+
+  /* Elevation & HUD */
+  --z-bg: 0;
+  --z-stars: 1;
+  --z-orbital-grid: 2;
+  --z-content: 10;
+  --z-hud: 20;
+  --z-overlay: 30;
+}
