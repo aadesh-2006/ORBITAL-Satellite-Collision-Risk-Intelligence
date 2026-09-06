@@ -2,7 +2,8 @@ import React, { useState, useCallback } from 'react';
 import { StoryProvider, useStoryState } from './hooks/useStoryState';
 import { StoryLayout } from './layouts/StoryLayout';
 import { LandingM1Section } from './sections/LandingM1Section';
-import { ProblemM2Placeholder } from './sections/ProblemM2Placeholder';
+import { ProblemM2Section } from './sections/ProblemM2Section';
+import { ConjunctionM3Placeholder } from './sections/ConjunctionM3Placeholder';
 
 const StoryAppContent: React.FC = () => {
   const { currentStageId, goToStage } = useStoryState();
@@ -18,20 +19,29 @@ const StoryAppContent: React.FC = () => {
     }, 1100);
   }, [goToStage]);
 
+  const renderSection = () => {
+    switch (currentStageId) {
+      case 'LANDING':
+        return (
+          <LandingM1Section
+            onPhaseChange={setLandingPhase}
+            isTransitioning={isTransitioning}
+            onEnterMission={handleEnterMission}
+          />
+        );
+      case 'PROBLEM':
+        return <ProblemM2Section />;
+      default:
+        return <ConjunctionM3Placeholder />;
+    }
+  };
+
   return (
     <StoryLayout
       phase={currentStageId === 'LANDING' ? landingPhase : 6}
       isTransitioning={isTransitioning}
     >
-      {currentStageId === 'LANDING' ? (
-        <LandingM1Section
-          onPhaseChange={setLandingPhase}
-          isTransitioning={isTransitioning}
-          onEnterMission={handleEnterMission}
-        />
-      ) : (
-        <ProblemM2Placeholder />
-      )}
+      {renderSection()}
     </StoryLayout>
   );
 };

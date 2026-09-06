@@ -2,7 +2,7 @@ import React from 'react';
 
 interface StatusBadgeProps {
   label: string;
-  variant?: 'emerald' | 'amber' | 'cyan' | 'monochrome';
+  variant?: 'emerald' | 'amber' | 'cyan' | 'ruby' | 'monochrome';
   dot?: boolean;
   className?: string;
 }
@@ -19,6 +19,8 @@ export const StatusBadge: React.FC<StatusBadgeProps> = ({
         return 'var(--accent-amber)';
       case 'cyan':
         return 'var(--accent-cyan)';
+      case 'ruby':
+        return 'var(--accent-ruby)';
       case 'monochrome':
         return 'var(--text-secondary)';
       case 'emerald':
