@@ -6,7 +6,7 @@ import { FadeIn } from '../components/animation/FadeIn';
 import { CrosshairFrame } from '../components/ui/CrosshairFrame';
 import { StatusBadge } from '../components/ui/StatusBadge';
 
-export const FinalSystemM9Placeholder: React.FC = () => {
+export const ClosingM10Placeholder: React.FC = () => {
   const { goToStage } = useStoryState();
 
   return (
@@ -39,7 +39,7 @@ export const FinalSystemM9Placeholder: React.FC = () => {
         >
           <FadeIn direction="down" distance={10} duration={0.8}>
             <StatusBadge
-              label="STAGE 08 // FINAL SYSTEM & DASHBOARD"
+              label="STAGE 09 // MISSION HORIZON & CLOSING"
               variant="emerald"
             />
           </FadeIn>
@@ -55,7 +55,7 @@ export const FinalSystemM9Placeholder: React.FC = () => {
                 fontFamily: 'var(--font-display)',
               }}
             >
-              Operational System Interface
+              Mission Horizon & Conclusions
             </h2>
           </FadeIn>
 
@@ -69,13 +69,13 @@ export const FinalSystemM9Placeholder: React.FC = () => {
                 letterSpacing: '0.1em',
               }}
             >
-              [ M9 MODULE TARGET — STANDING BY ]
+              [ M10 MODULE TARGET — STANDING BY ]
             </div>
           </FadeIn>
 
           <FadeIn direction="up" distance={10} duration={0.8} delay={0.3}>
             <button
-              onClick={() => goToStage('PREDICTION')}
+              onClick={() => goToStage('FINAL_SYSTEM')}
               style={{
                 marginTop: '28px',
                 background: 'rgba(255, 255, 255, 0.04)',
@@ -98,7 +98,7 @@ export const FinalSystemM9Placeholder: React.FC = () => {
                 e.currentTarget.style.borderColor = 'var(--border-subtle)';
               }}
             >
-              ← RETURN TO SIMULATED PREDICTION (M8)
+              ← RETURN TO FINAL SYSTEM (M9)
             </button>
           </FadeIn>
         </CrosshairFrame>
