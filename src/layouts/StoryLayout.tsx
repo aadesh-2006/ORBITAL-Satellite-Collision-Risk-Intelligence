@@ -5,9 +5,15 @@ import { useStoryState } from '../hooks/useStoryState';
 
 interface StoryLayoutProps {
   children: React.ReactNode;
+  phase?: number;
+  isTransitioning?: boolean;
 }
 
-export const StoryLayout: React.FC<StoryLayoutProps> = ({ children }) => {
+export const StoryLayout: React.FC<StoryLayoutProps> = ({
+  children,
+  phase = 6,
+  isTransitioning = false,
+}) => {
   const { atmosphere } = useStoryState();
 
   return (
@@ -23,8 +29,12 @@ export const StoryLayout: React.FC<StoryLayoutProps> = ({ children }) => {
         justifyContent: 'center',
       }}
     >
-      {/* Background Starfield, Parallax & Astrodynamic Space System */}
-      <SpaceBackground atmosphere={atmosphere} />
+      {/* Background Starfield, Parallax, Earth & Orbital System */}
+      <SpaceBackground
+        atmosphere={atmosphere}
+        phase={phase}
+        isTransitioning={isTransitioning}
+      />
 
       {/* Persistent Aerospace Telemetry & HUD */}
       <TelemetryHUD />
