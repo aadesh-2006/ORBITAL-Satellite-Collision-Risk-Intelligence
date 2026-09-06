@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useCallback, useEffect } from 'react';
+import React, { createContext, useContext, useState, useCallback } from 'react';
 import { StoryStageConfig, StoryStageId, SpaceAtmosphere } from '../types/story';
 import { STORY_STAGES, STAGE_MAP } from '../data/storyStages';
 
@@ -46,26 +46,6 @@ export const StoryProvider: React.FC<{
       setCurrentStageId(STORY_STAGES[stageIndex - 1].id);
     }
   }, [stageIndex]);
-
-  // Global keyboard shortcuts for progression
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      // Don't trigger if user is in an input
-      if (['INPUT', 'TEXTAREA', 'SELECT'].includes((e.target as HTMLElement)?.tagName)) {
-        return;
-      }
-
-      if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === ' ') {
-        if (e.key === ' ') e.preventDefault();
-        nextStage();
-      } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
-        prevStage();
-      }
-    };
-
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [nextStage, prevStage]);
 
   return (
     <StoryContext.Provider

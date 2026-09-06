@@ -74,7 +74,7 @@ export const LandingM1Section: React.FC<LandingM1SectionProps> = ({
   // Keyboard trigger for Enter / Space
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Enter' || e.key === ' ') {
+      if (e.key === 'Enter' || e.key === ' ' || e.key === 'ArrowRight' || e.key === 'ArrowDown') {
         e.preventDefault();
         handleEnterMission();
       }

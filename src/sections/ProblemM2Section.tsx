@@ -8,7 +8,7 @@ import { ConjunctionVisualizer } from '../components/space/ConjunctionVisualizer
 import { useParallax } from '../hooks/useParallax';
 
 export const ProblemM2Section: React.FC = () => {
-  const { nextStage, goToStage } = useStoryState();
+  const { currentStageId, nextStage, goToStage } = useStoryState();
   const [phase, setPhase] = useState<number>(1);
   const [isTransitioning, setIsTransitioning] = useState<boolean>(false);
   const { x: parallaxX, y: parallaxY } = useParallax(0.04);
@@ -39,36 +39,44 @@ export const ProblemM2Section: React.FC = () => {
     };
   }, []);
 
-  // Keyboard navigation
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'Enter') {
-        e.preventDefault();
-        if (phase < 7) {
-          setPhase((p) => Math.min(p + 1, 7));
-        } else {
-          handleNextStage();
-        }
-      } else if (e.key === 'ArrowLeft') {
-        e.preventDefault();
-        if (phase > 1) {
-          setPhase((p) => Math.max(p - 1, 1));
-        } else {
-          goToStage('LANDING');
-        }
-      }
-    };
-
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [phase, goToStage]);
-
   const handleNextStage = useCallback(() => {
     setIsTransitioning(true);
     setTimeout(() => {
       nextStage();
     }, 1000);
   }, [nextStage]);
+
+  // Keyboard navigation
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (currentStageId !== 'PROBLEM') return;
+
+      if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === ' ' || e.key === 'Enter') {
+        e.preventDefault();
+        if (phase < 7) {
+          setPhase((p) => Math.min(p + 1, 7));
+        } else {
+          handleNextStage();
+        }
+      } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        if (phase > 1) {
+          setPhase((p) => Math.max(p - 1, 1));
+        } else {
+          goToStage('LANDING');
+        }
+      } else if (e.key === 'Home') {
+        e.preventDefault();
+        setPhase(1);
+      } else if (e.key === 'End') {
+        e.preventDefault();
+        setPhase(7);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [phase, currentStageId, goToStage, handleNextStage]);
 
   return (
     <div

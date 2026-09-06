@@ -7,7 +7,7 @@ import { ProjectPipelineVisualizer } from '../components/space/ProjectPipelineVi
 import { useParallax } from '../hooks/useParallax';
 
 export const OurPlanM5Section: React.FC = () => {
-  const { nextStage, goToStage } = useStoryState();
+  const { currentStageId, nextStage, goToStage } = useStoryState();
   const [phase, setPhase] = useState<number>(1);
   const [isTransitioning, setIsTransitioning] = useState<boolean>(false);
   const { x: parallaxX, y: parallaxY } = useParallax(0.04);
@@ -54,26 +54,34 @@ export const OurPlanM5Section: React.FC = () => {
   // Keyboard navigation
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'Enter') {
+      if (currentStageId !== 'OUR_PLAN') return;
+
+      if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === ' ' || e.key === 'Enter') {
         e.preventDefault();
         if (phase < 9) {
           setPhase((p) => Math.min(p + 1, 9));
         } else {
           handleNextStage();
         }
-      } else if (e.key === 'ArrowLeft') {
+      } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
         e.preventDefault();
         if (phase > 1) {
           setPhase((p) => Math.max(p - 1, 1));
         } else {
           goToStage('OUR_THINKING');
         }
+      } else if (e.key === 'Home') {
+        e.preventDefault();
+        setPhase(1);
+      } else if (e.key === 'End') {
+        e.preventDefault();
+        setPhase(9);
       }
     };
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [phase, goToStage, handleNextStage]);
+  }, [phase, currentStageId, goToStage, handleNextStage]);
 
   return (
     <div
