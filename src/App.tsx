@@ -6,7 +6,8 @@ import { ProblemM2Section } from './sections/ProblemM2Section';
 import { CurrentSolutionM3Section } from './sections/CurrentSolutionM3Section';
 import { OurThinkingM4Section } from './sections/OurThinkingM4Section';
 import { OurPlanM5Section } from './sections/OurPlanM5Section';
-import { OurApproachM6Placeholder } from './sections/OurApproachM6Placeholder';
+import { OurApproachM6Section } from './sections/OurApproachM6Section';
+import { ModelM7Placeholder } from './sections/ModelM7Placeholder';
 
 const StoryAppContent: React.FC = () => {
   const { currentStageId, goToStage } = useStoryState();
@@ -41,8 +42,11 @@ const StoryAppContent: React.FC = () => {
         return <OurThinkingM4Section />;
       case 'OUR_PLAN':
         return <OurPlanM5Section />;
+      case 'OUR_APPROACH':
+      case 'DATA':
+        return <OurApproachM6Section />;
       default:
-        return <OurApproachM6Placeholder />;
+        return <ModelM7Placeholder />;
     }
   };
 
