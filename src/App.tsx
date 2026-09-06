@@ -3,7 +3,8 @@ import { StoryProvider, useStoryState } from './hooks/useStoryState';
 import { StoryLayout } from './layouts/StoryLayout';
 import { LandingM1Section } from './sections/LandingM1Section';
 import { ProblemM2Section } from './sections/ProblemM2Section';
-import { ConjunctionM3Placeholder } from './sections/ConjunctionM3Placeholder';
+import { CurrentSolutionM3Section } from './sections/CurrentSolutionM3Section';
+import { OurThinkingM4Placeholder } from './sections/OurThinkingM4Placeholder';
 
 const StoryAppContent: React.FC = () => {
   const { currentStageId, goToStage } = useStoryState();
@@ -31,8 +32,11 @@ const StoryAppContent: React.FC = () => {
         );
       case 'PROBLEM':
         return <ProblemM2Section />;
+      case 'CONJUNCTION':
+      case 'CURRENT_SOLUTION':
+        return <CurrentSolutionM3Section />;
       default:
-        return <ConjunctionM3Placeholder />;
+        return <OurThinkingM4Placeholder />;
     }
   };
 
